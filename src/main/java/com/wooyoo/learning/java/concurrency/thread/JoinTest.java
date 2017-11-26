@@ -14,7 +14,7 @@ public class JoinTest {
     public static void main(String[] args) throws InterruptedException {
         AddThread at = new AddThread();
         at.start();
-        at.join();
+        at.join(); // 等到at结束之后，main线程才能继续执行
         System.out.println(i);
     }
 }
