@@ -4,8 +4,8 @@ import java.util.concurrent.CountDownLatch;
 
 public class CodeOrderTest implements Runnable {
     private static int a = 0;
-//    private static boolean flag = false;
-    private static volatile boolean flag = false;
+    private static boolean flag = false;
+//    private static volatile boolean flag = false;
 
     private static CountDownLatch startLatch;
     private static CountDownLatch stopLatch;
