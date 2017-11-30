@@ -9,6 +9,7 @@ public class FairLock implements Runnable {
     public void run() {
         while (true) {
             try {
+                // 公平锁会导致多个线程交替获取锁
                 fairLock.lock();
                 System.out.println(Thread.currentThread()
                                          .getName() + "获得锁");
