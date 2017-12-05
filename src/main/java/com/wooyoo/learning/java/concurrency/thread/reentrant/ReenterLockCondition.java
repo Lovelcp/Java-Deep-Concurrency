@@ -23,8 +23,8 @@ public class ReenterLockCondition implements Runnable {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        ReenterLockCondition l = new ReenterLockCondition();
-        Thread t1 = new Thread(l);
+        ReenterLockCondition c = new ReenterLockCondition();
+        Thread t1 = new Thread(c);
         t1.start();
         Thread.sleep(2000);
 
