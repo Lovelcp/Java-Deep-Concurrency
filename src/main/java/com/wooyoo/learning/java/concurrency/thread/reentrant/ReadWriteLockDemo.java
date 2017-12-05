@@ -36,29 +36,23 @@ public class ReadWriteLockDemo {
 
     public static void main(String[] args) {
         final ReadWriteLockDemo demo = new ReadWriteLockDemo();
-        Runnable readRunnable = new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    demo.handleRead(readLock);
-                    //                demo.handleRead(lock);
-                }
-                catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        Runnable readRunnable = () -> {
+            try {
+                demo.handleRead(readLock);
+                //                demo.handleRead(lock);
+            }
+            catch (InterruptedException e) {
+                e.printStackTrace();
             }
         };
 
-        Runnable writeRunnable = new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    demo.handleWrite(writeLock, new Random().nextInt());
-                    //                    demo.handleWrite(lock, new Random().nextInt());
-                }
-                catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        Runnable writeRunnable = () -> {
+            try {
+                demo.handleWrite(writeLock, new Random().nextInt());
+                //                    demo.handleWrite(lock, new Random().nextInt());
+            }
+            catch (InterruptedException e) {
+                e.printStackTrace();
             }
         };
 
